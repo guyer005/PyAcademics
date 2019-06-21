@@ -7,6 +7,7 @@ Created on Tue Jun 11 09:55:17 2019
 
 import pandas as pd
 pd.set_option('display.max_columns',15)
+pd.set_option('display.width',120)
 Stud = pd.read_csv('students_complete.csv',sep=',')
 Sch = pd.read_csv('schools_complete.csv',sep=',')
 Stud_df = pd.DataFrame(Stud)
@@ -95,6 +96,3 @@ print(round(BySize_df.mean(),2))
 BySize_df = Fin_df.groupby(["School Type"])[["Avg Math Score","Avg Reading Score",
                        "% Passing Math","% Passing Reading","Overall Passing Rate"]]
 print(round(BySize_df.mean(),2))
-
-#Was going to port this to Jupyter but the first few lines crashed my computer when run in Jupyter!
-#glad I'm using this IDE
